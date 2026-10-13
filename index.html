@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#123b8a">
+<meta name="description" content="Véletlenszerű gyakorlóteszt a Magyar Kulturális Ismereti Vizsga segédanyagához.">
+<title>Magyar kulturális ismereti vizsga – gyakorlóteszt</title>
+<style>
+:root{--bg:#eef4ff;--paper:#fff;--ink:#142443;--muted:#5c6d89;--green:#1756c2;--green2:#e2edff;--line:#d3e0f5;--gold:#8bb7ff;--red:#a83333;--redbg:#fff0ef;--shadow:0 12px 36px rgba(23,86,194,.10)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:linear-gradient(135deg,#123b8a,#2478e8);color:#fff;padding:28px 18px 34px}
+.wrap{max-width:900px;margin:auto}header .eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.13em;color:#c8dcff;font-weight:800}h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.1;margin:.45rem 0 .8rem;max-width:700px}header p{margin:0;color:#edf4ff;max-width:650px}
+main{max-width:900px;margin:-16px auto 50px;padding:0 14px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:clamp(16px,4vw,28px);margin-bottom:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}.stat{background:#f3f7ff;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}.stat strong{display:block;font-size:1.35rem;color:var(--green)}.stat span{font-size:.8rem;color:var(--muted)}
+.notice{border-left:4px solid var(--gold);padding:11px 14px;background:#fff9e8;border-radius:8px;color:#51451f;font-size:.92rem;margin:14px 0}
+.updated{background:var(--green2);border-radius:12px;padding:12px 14px;font-size:.92rem;margin:14px 0}.updated strong{color:#123b8a}
+button{border:0;border-radius:12px;padding:12px 17px;font:inherit;font-weight:750;cursor:pointer;transition:transform .12s,filter .12s}button:hover{filter:brightness(.97)}button:active{transform:scale(.985)}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #f0c75e;outline-offset:2px}
+.primary{background:var(--green);color:white}.secondary{background:#eaf1ff;color:var(--green);border:1px solid var(--line)}.danger{background:#fff0ef;color:var(--red)}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+h2{font-size:1.3rem;margin:0 0 12px}h3{font-size:1.07rem;margin:0 0 8px}.muted{color:var(--muted)}.small{font-size:.85rem}.hidden{display:none!important}
+.progressline{height:8px;background:#e2eaf8;border-radius:99px;overflow:hidden;margin:12px 0 6px}.progressline>div{height:100%;width:0;background:var(--green);transition:width .2s}
+.qhead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}.tag{font-size:.76rem;letter-spacing:.02em;background:#eaf1ff;color:#174a9e;border-radius:99px;padding:5px 10px;font-weight:800;white-space:nowrap}
+.question{padding:19px 0;border-bottom:1px solid var(--line)}.question:last-child{border-bottom:0;padding-bottom:0}.qtitle{font-weight:750;font-size:1.04rem;margin-bottom:12px}.qnum{color:var(--green);margin-right:6px}
+.option{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line);border-radius:12px;margin:8px 0;cursor:pointer;background:#fff}.option:hover{background:#f2f6ff}.option input{margin-top:5px;accent-color:var(--green);flex:0 0 auto}.option span{flex:1}
+textarea,.textanswer{width:100%;padding:12px;border:1px solid #c6d5ee;border-radius:12px;font:inherit;resize:vertical;background:#fbfcff;color:var(--ink)}textarea{min-height:84px}
+.result{border-radius:15px;padding:16px;margin-top:16px}.pass{background:var(--green2);border:1px solid #b8dfcc}.fail{background:var(--redbg);border:1px solid #f0c4c0}.result strong.score{font-size:2rem;display:block;line-height:1.2}.review-item{border:1px solid var(--line);border-radius:12px;padding:13px;margin:10px 0}.review-item.good{border-left:5px solid #2478e8}.review-item.bad{border-left:5px solid #c44d48}.review-item p{margin:5px 0}.review-item .answer{color:#174a9e;font-size:.94rem}
+footer{max-width:900px;padding:0 18px 35px;margin:auto;color:var(--muted);font-size:.82rem}
+@media(min-width:650px){.stats{grid-template-columns:repeat(3,1fr)}.question{padding:22px 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1 style="text-align:center;margin:0 auto">Magyar kulturális ismereti vizsga</h1>
+</div></header>
+<main>
+<section class="panel" id="intro" style="text-align:center;padding:clamp(34px,8vw,72px) 20px">
+  <h2 style="font-size:clamp(1.7rem,5vw,2.4rem);margin:0 0 26px">Magyar kulturális ismereti vizsga</h2>
+  <button class="primary" id="startBtn" style="font-size:1.08rem;padding:16px 28px">Teszt indítása</button>
+</section>
+<section class="panel hidden" id="quizPanel">
+  <div class="qhead"><div><h2>Vizsgateszt</h2><div class="small muted" id="setInfo">Véletlen kérdéssor</div></div><span class="tag" id="answeredTag">0 / 12 megválaszolva</span></div>
+  <div class="progressline"><div id="progress"></div></div>
+  <p class="small muted">A tesztet bármikor beadhatod, de a pontosabb eredményhez válaszolj minden kérdésre.</p>
+  <form id="quizForm"><div id="questions"></div>
+    <div class="actions"><button class="primary" type="submit">Teszt beadása és javítás</button><button class="secondary" type="button" id="resetBtn">Új teszt, beadás nélkül</button></div>
+  </form>
+</section>
+<section class="panel hidden" id="resultPanel" aria-live="polite">
+  <h2>Eredmény</h2><div id="scoreBox" class="result"></div>
+  <div class="actions"><button class="primary" id="newBtn">Új véletlen teszt</button><button class="secondary" id="reviewBtn">Vissza a kérdésekhez</button></div>
+  <div id="review" class="hidden"><h2 style="margin-top:24px">Javítás és megoldások</h2><p class="small muted">A kifejtős kérdéseknél a kulcsszavas értékelés nem mindig ismeri fel az azonos értelmű, de másképp megfogalmazott választ.</p><div id="reviewList"></div></div>
+</section>
+</main>
+
+<script>
+const bank = {
+open: [
+{topic:"Nemzeti jelképek és ünnepek",q:"Ki írta a magyar Himnusz szövegét?",a:"Kölcsey Ferenc",keys:[["kölcsey"]]},
+{topic:"Nemzeti jelképek és ünnepek",q:"Ki zenésítette meg a Himnuszt?",a:"Erkel Ferenc",keys:[["erkel"]]},
+{topic:"Nemzeti jelképek és ünnepek",q:"Ki írta a Szózatot?",a:"Vörösmarty Mihály",keys:[["vörösmarty","vorosmarty"]]},
+{topic:"Nemzeti jelképek és ünnepek",q:"Melyik évben írta Vörösmarty Mihály a Szózatot?",a:"1836",keys:[["1836"]]},
+{topic:"Nemzeti jelképek és ünnepek",q:"Mit jelképez a zászló piros, fehér és zöld színe a tananyag szerint?",a:"Piros: erő; fehér: hűség; zöld: remény.",keys:[["erő","ero"],["hűség","huseg"],["remény","remen"]]},
+{topic:"Nemzeti jelképek és ünnepek",q:"Hol tekinthető meg a Szent Korona?",a:"Az Országházban.",keys:[["országház","orszaghaz"]]},
+{topic:"Történelem",q:"Mikor koronázták meg Szent Istvánt a tananyag szerint?",a:"1001. január 1-jén.",keys:[["1001"],["január 1","januar 1"]]},
+{topic:"Történelem",q:"Melyik évben adta ki II. András az Aranybullát?",a:"1222-ben.",keys:[["1222"]]},
+{topic:"Történelem",q:"Ki volt a tatárjárás utáni újjáépítéshez kötött, „második honalapítónak” nevezett király?",a:"IV. Béla",keys:[["iv. béla","iv béla","iv bela","4. béla","4 bela"]]},
+{topic:"Történelem",q:"Melyik évben volt a nándorfehérvári diadal?",a:"1456-ban.",keys:[["1456"]]},
+{topic:"Történelem",q:"Mikor írták alá a trianoni békeszerződést?",a:"1920. június 4-én.",keys:[["1920"],["június 4","junius 4","06.04","4-én","4 en"]]},
+{topic:"Történelem",q:"Melyik napon kezdődött az 1956-os forradalom?",a:"1956. október 23-án.",keys:[["1956"],["október 23","oktober 23","23-án","23 an"]]},
+{topic:"Történelem",q:"Melyik évben történt a magyarországi rendszerváltás időszaka?",a:"1989–1990-ben.",keys:[["1989","1990"]]},
+{topic:"Irodalom és zenetörténet",q:"Nevezz meg egyet a magyar népzenekutatás két kiemelkedő alakja közül!",a:"Bartók Béla vagy Kodály Zoltán.",keys:[["bartók","bartok","kodály","kodaly"]]},
+{topic:"Irodalom és zenetörténet",q:"Ki szerezte a Háry Jánost?",a:"Kodály Zoltán",keys:[["kodály","kodaly"]]},
+{topic:"Irodalom és zenetörténet",q:"Ki írta a Bánk bánt?",a:"Katona József",keys:[["katona józsef","katona jozsef"]]},
+{topic:"Irodalom és zenetörténet",q:"Ki a Csongor és Tünde szerzője?",a:"Vörösmarty Mihály",keys:[["vörösmarty","vorosmarty"]]},
+{topic:"Irodalom és zenetörténet",q:"Melyik zeneszerző műve A varázsfuvola?",a:"Wolfgang Amadeus Mozart",keys:[["mozart"]]},
+{topic:"Irodalom és zenetörténet",q:"Melyik Beethoven-mű dallama az Európai Unió himnusza?",a:"A IX. szimfónia negyedik tétele, az Örömóda.",keys:[["ix","9.","kilencedik"],["szimfónia","szimfonia","örömóda","oromoda"]]},
+{topic:"Állami intézmények",q:"Mikor lépett hatályba Magyarország Alaptörvénye?",a:"2012. január 1-jén.",keys:[["2012"],["január 1","januar 1","01.01","1-jén","1 jen"]]},
+{topic:"Állami intézmények",q:"Hány országgyűlési képviselő van a tananyag szerint?",a:"199",keys:[["199"]]},
+{topic:"Állami intézmények",q:"Mennyi időre választják az országgyűlési képviselőket a tananyag szerint?",a:"Négy évre.",keys:[["négy","negy","4"],["év","ev"]]},
+{topic:"Állami intézmények",q:"Ki választja meg a miniszterelnököt?",a:"Az Országgyűlés.",keys:[["országgyűlés","orszaggyules"]]},
+{topic:"Állami intézmények",q:"Nevezd meg Magyarország jelenlegi miniszterelnökét!",a:"Magyar Péter",keys:[["magyar péter","magyar peter"]]},
+{topic:"Állami intézmények",q:"Nevezd meg Magyarország jelenlegi köztársasági elnökét!",a:"Baka András",keys:[["baka andrás","baka andras"]]},
+{topic:"Alapvető jogok",q:"Nevezz meg egy alapvető jogot a tananyagban felsoroltak közül!",a:"Például: véleménynyilvánítás szabadsága, élethez és emberi méltósághoz való jog, vallásszabadság, tulajdonjog.",keys:[["véleménynyilvánítás","velemenynyilvanitas","élethez","elethez","emberi méltóság","emberi meltosag","vallásszabadság","vallasszabadsag","tulajdonjog","tisztességes eljárás","tisztességes eljaras","személyes adatok","szemelyes adatok","gyülekezési","gyulekezesi","törvény előtti egyenlőség","torveny elotti egyenloseg"]]},
+{topic:"Alapvető jogok",q:"Melyik évben törölték el a halálbüntetést Magyarországon a tananyag szerint?",a:"1990-ben.",keys:[["1990"]]},
+{topic:"Magyarország és Európa",q:"Mi Magyarország hivatalos pénzneme?",a:"A forint.",keys:[["forint"]]},
+{topic:"Magyarország és Európa",q:"Melyik Magyarország legnagyobb tava?",a:"A Balaton.",keys:[["balaton"]]},
+{topic:"Magyarország és Európa",q:"Nevezz meg egy Magyarországgal szomszédos országot!",a:"Például Ausztria, Szlovákia, Ukrajna, Románia, Szerbia, Horvátország vagy Szlovénia.",keys:[["ausztria","szlovákia","szlovakia","ukrajna","románia","romania","szerbia","horvátország","horvatorszag","szlovénia","szlovenia"]]},
+{topic:"Magyarország és Európa",q:"Melyik évben egyesült Pest, Buda és Óbuda Budapestté?",a:"1873-ban.",keys:[["1873"]]},
+{topic:"Magyarország és Európa",q:"Nevezz meg egy hungarikumot!",a:"Például a gulyásleves, a tokaji aszú vagy a magyar pálinka (a tananyagban felsorolt hungarikumok közül).",keys:[["gulyás","gulyas","tokaji","pálinka","palinka","kalocsai","herendi","csabai","makói","makoi","szegedi"]]},
+{topic:"Nemzeti jelképek és ünnepek",q:"Sorold fel a tananyagban megnevezett négy legfontosabb nemzeti jelképet!",a:"Zászló, Szent Korona, Himnusz, Magyarország címere.",keys:[["zászló","zaszlo"],["szent korona"],["himnusz"],["címer","címer","cimer"]]},
+{topic:"Nemzeti jelképek és ünnepek",q:"Melyek a koronázási jelvények a tananyag szerint?",a:"Szent Korona, koronázási jogar, országalma, koronázási kard és koronázási palást.",keys:[["korona"],["jogar"],["országalma","orszagalma"],["kard"],["palást","palast"]]},
+{topic:"Nemzeti jelképek és ünnepek",q:"Melyik három nap a magyar nemzeti ünnep a tananyag felsorolása szerint?",a:"Március 15., augusztus 20. és október 23.",keys:[["március 15","marcius 15"],["augusztus 20"],["október 23","oktober 23"]]},
+{topic:"Történelem",q:"Melyik évekre teszi a tananyag a honfoglalást?",a:"895–896.",keys:[["895"],["896"]]},
+{topic:"Történelem",q:"Mikor koronázták meg Szent Istvánt a tananyag szerint?",a:"1001. január 1-jén.",keys:[["1001"],["január 1","januar 1"]]},
+{topic:"Történelem",q:"Mikor zajlott a tatárjárás?",a:"1241–1242-ben.",keys:[["1241"],["1242"]]},
+{topic:"Történelem",q:"Melyik évben halt ki az Árpád-ház a tananyag szerint?",a:"1301-ben, III. András halálával.",keys:[["1301"]]},
+{topic:"Történelem",q:"Mikor volt a mohácsi csata?",a:"1526. augusztus 29-én.",keys:[["1526"],["augusztus 29","augusztus 29"]]},
+{topic:"Történelem",q:"Melyik évben foglalták el a törökök Budát?",a:"1541-ben.",keys:[["1541"]]},
+{topic:"Történelem",q:"Mikor foglalták vissza Budát a Habsburgok vezette keresztény seregek?",a:"1686. szeptember 2-án.",keys:[["1686"],["szeptember 2","szeptember 2"]]},
+{topic:"Történelem",q:"Ki vezette az 1703–1711 közötti nemzeti felkelést?",a:"II. Rákóczi Ferenc.",keys:[["rákóczi","rakoczi"]]},
+{topic:"Történelem",q:"Nevezz meg két reformkori célt a tananyag alapján!",a:"Például a magyar nyelv hivatalossá tétele, alkotmányos intézmények védelme, feudális viszonyok lebontása, polgárosodás.",keys:[["magyar nyelv","nyelv hivatalossá"],["alkotmány","alkotmany","feudális","feudalis","polgárosodás","polgarosodas","nemzeti fejlődés","nemzeti fejlodes"]]},
+{topic:"Történelem",q:"Kihez fűződik a Lánchíd megépítésének kezdeményezése és a Magyar Tudományos Akadémia alapítása?",a:"Széchenyi Istvánhoz.",keys:[["széchenyi","szechenyi"]]},
+{topic:"Történelem",q:"Ki lett az első felelős magyar kormány miniszterelnöke?",a:"Batthyány Lajos.",keys:[["batthyány","batthyany"]]},
+{topic:"Történelem",q:"Mikor tették le a fegyvert Világosnál a szabadságharc végén?",a:"1849. augusztus 13-án.",keys:[["1849"],["augusztus 13"]]},
+{topic:"Történelem",q:"Melyik évben történt a kiegyezés, és mi jött létre?",a:"1867-ben; létrejött az Osztrák–Magyar Monarchia.",keys:[["1867"],["monarchia"]]},
+{topic:"Történelem",q:"Mi indította el közvetlenül az első világháború eseménysorát a tananyag szerint?",a:"Ferenc Ferdinánd trónörökös és felesége 1914. június 28-i meggyilkolása Szarajevóban.",keys:[["ferenc ferdinánd","ferenc ferdinand"],["szarajevó","szarajevo"]]},
+{topic:"Történelem",q:"Melyik napon tört ki a második világháború a tananyag szerint?",a:"1939. szeptember 1-jén, Lengyelország megtámadásával.",keys:[["1939"],["szeptember 1","lengyelország","lengyelorszag"]]},
+{topic:"Történelem",q:"Mikor szállta meg Németország Magyarországot a második világháborúban?",a:"1944. március 19-én.",keys:[["1944"],["március 19","marcius 19"]]},
+{topic:"Történelem",q:"Melyik napon kezdődött az 1956-os forradalom, és hogyan indult?",a:"1956. október 23-án, a budapesti diákok békés tüntetésével.",keys:[["1956"],["október 23","oktober 23"]]},
+{topic:"Irodalom és zenetörténet",q:"Ki zenésítette meg a Szózatot?",a:"Egressy Béni.",keys:[["egressy"]]},
+{topic:"Irodalom és zenetörténet",q:"Nevezz meg két magyar költőt, akik a tananyagban a reformkorhoz vagy a nemzeti irodalomhoz kötődnek!",a:"Például Kölcsey Ferenc, Vörösmarty Mihály, Petőfi Sándor, Arany János vagy József Attila.",keys:[["kölcsey","kolcsey","vörösmarty","vorosmarty","petőfi","petofi","arany jános","arany janos","józsef attila","jozsef attila"]]},
+{topic:"Állami intézmények",q:"Mennyi időre választják a köztársasági elnököt, és hányszor választható újra?",a:"Öt évre; legfeljebb egyszer választható újra.",keys:[["öt","ot","5"],["egyszer","egy alkalommal"]]},
+{topic:"Alapvető jogok",q:"Melyik három generációba sorolja a tananyag az alapjogokat? Mondj mindegyikre egy példát!",a:"Első: polgári és politikai szabadságjogok; második: munkához vagy oktatáshoz való jog; harmadik: környezethez való jog, gyermekjogok vagy betegjogok.",keys:[["első","elso"],["második","masodik"],["harmadik"]]},
+{topic:"Alapvető jogok",q:"Nevezz meg két dokumentumot, amely az emberi jogok fejlődésének fontos állomása!",a:"Például Magna Charta Libertatum (1215), Aranybulla (1222), francia Emberi és Polgári Jogok Nyilatkozata (1789), Emberi Jogok Európai Egyezménye (1950).",keys:[["magna charta","aranybulla","emberi és polgári jogok nyilatkozata","emberi es polgari jogok nyilatkozata","emberi jogok európai egyezménye","emberi jogok europai egyezmenye"]]},
+{topic:"Magyarország és Európa",q:"Melyik napon csatlakozott Magyarország az Európai Unióhoz?",a:"2004. május 1-jén.",keys:[["2004"],["május 1","majus 1"]]},
+{topic:"Magyarország és Európa",q:"Mikor csatlakozott Magyarország a schengeni övezethez?",a:"2007-ben.",keys:[["2007"]]},
+{topic:"Magyarország és Európa",q:"Sorolj fel három magyarországi folyót a tananyag alapján!",a:"Duna, Tisza, Dráva vagy Rába.",keys:[["duna","tisza","dráva","drava","rába","raba"]]},
+{topic:"Magyarország és Európa",q:"Nevezz meg három budapesti nevezetességet a tananyag felsorolásából!",a:"Például Budavári Palota, Halászbástya, Hősök tere, Parlament, Lánchíd, Mátyás-templom.",keys:[["budavári","budavari","halászbástya","halaszbastya","hősök tere","hosok tere","parlament","lánchíd","lanchid","mátyás-templom","matyas-templom"]]},
+{topic:"Magyarország és Európa",q:"Nevezz meg két, a tananyagban szereplő magyarországi nemzetiséget!",a:"Például német, roma, horvát, szlovák, román, szerb, szlovén, ukrán, lengyel, görög, bolgár, örmény vagy ruszin.",keys:[["német","nemet","roma","horvát","horvat","szlovák","szlovak","román","roman","szerb","szlovén","szloven","ukrán","ukran","lengyel","görög","gorog","bolgár","bolgar","örmény","ormeny","ruszin"]]},
+{topic:"Magyarország és Európa",q:"Nevezz meg két, a tananyagban felsorolt hungarikumot!",a:"Például gulyásleves, halászlé, dobostorta, Pick téliszalámi, tokaji aszú, busójárás, puli, halasi csipke vagy Zsolnay-porcelán.",keys:[["gulyás","gulyas","halászlé","halaszle","dobostorta","pick","tokaji","busójárás","busojaras","puli","halasi csipke","zsolnay"]]},
+{topic:"Magyarország és Európa",q:"Melyik három keresztény felekezetet említi a tananyag Magyarországon?",a:"A katolikus, a református és az evangélikus egyházat.",keys:[["katolikus"],["református","reformatus"],["evangélikus","evangelikus"]]},
+{topic:"Magyarország és Európa",q:"Hol található az Európai Unió központja, és hány tagállama van a tananyag szerint?",a:"Brüsszelben; 27 tagállama van.",keys:[["brüsszel","brusszel"],["27"]]}
+],
+mc: [
+{topic:"Nemzeti jelképek és ünnepek",q:"Ki írta a Himnusz szövegét?",opts:["Kölcsey Ferenc","Vörösmarty Mihály","Petőfi Sándor","Arany János"],correct:0,why:"A Himnusz költője Kölcsey Ferenc."},
+{topic:"Nemzeti jelképek és ünnepek",q:"Ki zenésítette meg a Himnuszt?",opts:["Liszt Ferenc","Erkel Ferenc","Kodály Zoltán","Bartók Béla"],correct:1,why:"A Himnuszt Erkel Ferenc zenésítette meg."},
+{topic:"Nemzeti jelképek és ünnepek",q:"Melyik évben íródott a Himnusz?",opts:["1848","1836","1823","1790"],correct:2,why:"Kölcsey Ferenc 1823-ban írta."},
+{topic:"Nemzeti jelképek és ünnepek",q:"Mit jelképez a zászló fehér sávja?",opts:["Erőt","Hűséget","Reményt","Szabadságot"],correct:1,why:"A tananyag szerint a fehér a hűséget jelképezi."},
+{topic:"Nemzeti jelképek és ünnepek",q:"Melyik város szerepel a korábbi magyar koronázó városok között?",opts:["Debrecen","Szeged","Székesfehérvár","Pécs"],correct:2,why:"A felsorolt koronázó városok egyike Székesfehérvár."},
+{topic:"Történelem",q:"Melyik évben adták ki az Aranybullát?",opts:["1000","1222","1456","1526"],correct:1,why:"II. András 1222-ben adta ki az Aranybullát."},
+{topic:"Történelem",q:"Ki volt a „második honalapítóként” emlegetett uralkodó?",opts:["Szent István","Hunyadi Mátyás","IV. Béla","I. András"],correct:2,why:"IV. Béla a tatárjárás utáni újjáépítés miatt kapta ezt a nevet."},
+{topic:"Történelem",q:"Melyik évben volt a nándorfehérvári diadal?",opts:["1241","1456","1526","1686"],correct:1,why:"A nándorfehérvári győzelem 1456-ban történt."},
+{topic:"Történelem",q:"Mikor írták alá a trianoni békeszerződést?",opts:["1918. november 11.","1919. március 21.","1920. június 4.","1921. augusztus 20."],correct:2,why:"A dátum 1920. június 4."},
+{topic:"Történelem",q:"Melyik napon kezdődött az 1956-os forradalom?",opts:["Március 15.","Augusztus 20.","Október 23.","November 4."],correct:2,why:"Az 1956-os forradalom október 23-án kezdődött."},
+{topic:"Történelem",q:"Mikor ért véget végleg a szovjet csapatok kivonulása Magyarországról a tananyag szerint?",opts:["1989-ben","1990-ben","1991-ben","1994-ben"],correct:2,why:"A szovjet csapatok 1991-ben hagyták el végleg az országot."},
+{topic:"Irodalom és zenetörténet",q:"Ki írta a Szózatot?",opts:["Kölcsey Ferenc","Vörösmarty Mihály","Katona József","Jókai Mór"],correct:1,why:"A Szózatot Vörösmarty Mihály írta 1836-ban."},
+{topic:"Irodalom és zenetörténet",q:"Ki a Bánk bán szerzője?",opts:["Madách Imre","Mikszáth Kálmán","Katona József","Móricz Zsigmond"],correct:2,why:"A Bánk bán szerzője Katona József."},
+{topic:"Irodalom és zenetörténet",q:"Ki szerezte a Háry Jánost?",opts:["Kodály Zoltán","Erkel Ferenc","Liszt Ferenc","Bartók Béla"],correct:0,why:"A Háry János Kodály Zoltán műve."},
+{topic:"Irodalom és zenetörténet",q:"Melyik mű Beethoven IX. szimfóniájának negyedik tételéhez kötődik?",opts:["A varázsfuvola","Örömóda","A hattyúk tava","Faust"],correct:1,why:"Az Örömóda megzenésített változata az EU himnuszának dallama."},
+{topic:"Irodalom és zenetörténet",q:"Ki írta a Rómeó és Júliát?",opts:["Voltaire","Goethe","William Shakespeare","Dante"],correct:2,why:"A Rómeó és Júlia William Shakespeare műve."},
+{topic:"Állami intézmények",q:"Mikor lépett hatályba Magyarország Alaptörvénye?",opts:["1989. október 23.","2010. május 1.","2012. január 1.","2014. március 15."],correct:2,why:"Az Alaptörvény 2012. január 1-jén lépett hatályba."},
+{topic:"Állami intézmények",q:"Hány országgyűlési képviselő van a tananyag szerint?",opts:["100","150","199","386"],correct:2,why:"A tananyag 199 képviselőt jelöl meg."},
+{topic:"Állami intézmények",q:"Melyik szerv alkot törvényeket és fogadja el a központi költségvetést?",opts:["A Kormány","Az Országgyűlés","A bíróságok","A köztársasági elnök önállóan"],correct:1,why:"Ezek az Országgyűlés fő feladatai közé tartoznak."},
+{topic:"Állami intézmények",q:"Ki Magyarország jelenlegi miniszterelnöke?",opts:["Orbán Viktor","Magyar Péter","Baka András","Göncz Árpád"],correct:1,why:"A 2026-os frissített adat: Magyar Péter."},
+{topic:"Állami intézmények",q:"Ki Magyarország jelenlegi köztársasági elnöke?",opts:["Dr. Sulyok Tamás","Baka András","Magyar Péter","Áder János"],correct:1,why:"A 2026-os frissített adat: Baka András."},
+{topic:"Alapvető jogok",q:"Melyik szerepel a tananyagban az alapvető jogok között?",opts:["Véleménynyilvánítás szabadsága","Korlátlan adómentesség","Kötelező külföldi utazás","Törvényen kívüliség"],correct:0,why:"A véleménynyilvánítás szabadsága alapvető jog."},
+{topic:"Alapvető jogok",q:"Melyik évben törölték el a halálbüntetést Magyarországon a tananyag szerint?",opts:["1945","1956","1990","2012"],correct:2,why:"A tananyag szerint 1990-ben törölték el."},
+{topic:"Magyarország és Európa",q:"Mi Magyarország pénzneme?",opts:["Korona","Forint","Euró","Lej"],correct:1,why:"Magyarország pénzneme a forint."},
+{topic:"Magyarország és Európa",q:"Melyik Magyarország fővárosa?",opts:["Debrecen","Szeged","Budapest","Pécs"],correct:2,why:"Magyarország fővárosa Budapest."},
+{topic:"Magyarország és Európa",q:"Melyik a tananyagban felsorolt legnagyobb tavak egyike?",opts:["Bledi-tó","Balaton","Genfi-tó","Boden-tó"],correct:1,why:"A Balaton, a Fertő tó és a Velencei-tó szerepel a felsorolásban."},
+{topic:"Magyarország és Európa",q:"Mikor jött létre Budapest Pest, Buda és Óbuda egyesítésével?",opts:["1848. március 15.","1867. június 8.","1873. november 17.","1896. május 2."],correct:2,why:"Budapest 1873. november 17-én jött létre."},
+{topic:"Magyarország és Európa",q:"Melyik a tananyagban említett magyar tájegység?",opts:["Alföld","Skandináv-félsziget","Bretagne","Andalúzia"],correct:0,why:"Az Alföld Magyarország egyik nagy tájegysége."},
+{topic:"Magyarország és Európa",q:"Melyik zenei mű az Európai Unió himnuszának dallama?",opts:["Himnusz","Szózat","Örömóda","Rákóczi-induló"],correct:2,why:"Az EU himnusza Beethoven IX. szimfóniájának Örömóda-tételéből származik."},
+{topic:"Nemzeti jelképek és ünnepek",q:"Melyik a magyar nemzeti jelképek között szerepel?",opts:["Szent Korona","Eiffel-torony","Colosseum","Szabadság-szobor New Yorkban"],correct:0,why:"A Szent Korona a tananyag szerint kiemelt nemzeti jelkép."},
+{topic:"Történelem",q:"Melyik eseményhez kapcsolódik a déli harangszó a tananyag szerint?",opts:["Mohácsi csata","Nándorfehérvári diadal","Trianoni béke","1956-os forradalom"],correct:1,why:"A déli harangszó a nándorfehérvári diadalra emlékeztet."},
+{topic:"Irodalom és zenetörténet",q:"Ki a Csongor és Tünde szerzője?",opts:["Vörösmarty Mihály","Arany János","József Attila","Petőfi Sándor"],correct:0,why:"A Csongor és Tünde Vörösmarty Mihály műve."},
+{topic:"Állami intézmények",q:"Melyik hatalmi ághoz tartozik a Kormány és az alárendelt közigazgatás?",opts:["Törvényhozó","Végrehajtó","Igazságszolgáltató","Helyi önkormányzati"],correct:1,why:"A Kormány és a neki alárendelt közigazgatás alkotja a végrehajtó hatalmat."},
+{topic:"Történelem",q:"Melyik évben foglalták el a törökök Budát?",opts:["1526","1541","1686","1703"],correct:1,why:"A tananyag szerint a törökök 1541-ben foglalták el Budát."},
+{topic:"Történelem",q:"Melyik esemény történt 1686. szeptember 2-án?",opts:["A mohácsi csata","Buda visszafoglalása","Az Aranybulla kiadása","A kiegyezés"],correct:1,why:"A Habsburgok vezette keresztény sereg visszafoglalta Budát."},
+{topic:"Történelem",q:"Ki vezette az 1703–1711 közötti felkelést?",opts:["Kossuth Lajos","II. Rákóczi Ferenc","Deák Ferenc","Hunyadi János"],correct:1,why:"A felkelés II. Rákóczi Ferenc vezetésével zajlott."},
+{topic:"Történelem",q:"Ki alapította a Magyar Tudományos Akadémiát a tananyag szerint?",opts:["Széchenyi István","Petőfi Sándor","Batthyány Lajos","Deák Ferenc"],correct:0,why:"A Magyar Tudományos Akadémia alapítása Széchenyi Istvánhoz kötődik."},
+{topic:"Történelem",q:"Ki volt az első felelős magyar kormány miniszterelnöke?",opts:["Kossuth Lajos","Batthyány Lajos","Deák Ferenc","Szemere Bertalan"],correct:1,why:"Batthyány Lajost 1848 márciusában nevezték ki miniszterelnökké."},
+{topic:"Történelem",q:"Melyik évben jött létre az Osztrák–Magyar Monarchia?",opts:["1848","1867","1914","1920"],correct:1,why:"A kiegyezés 1867-ben történt."},
+{topic:"Történelem",q:"Mikor szállta meg Németország Magyarországot?",opts:["1939. szeptember 1.","1941. június 22.","1944. március 19.","1945. május 8."],correct:2,why:"A német megszállás 1944. március 19-én történt."},
+{topic:"Irodalom és zenetörténet",q:"Ki írta a Nemzeti dalt?",opts:["Arany János","Petőfi Sándor","József Attila","Kölcsey Ferenc"],correct:1,why:"A Nemzeti dal Petőfi Sándor műve."},
+{topic:"Állami intézmények",q:"Hány évre választják a köztársasági elnököt?",opts:["4 évre","5 évre","6 évre","7 évre"],correct:1,why:"A tananyag szerint öt évre választják."},
+{topic:"Alapvető jogok",q:"Melyik dokumentum született 1215-ben?",opts:["Aranybulla","Magna Charta Libertatum","Emberi Jogok Európai Egyezménye","Alaptörvény"],correct:1,why:"A Magna Charta Libertatum 1215-ben született."},
+{topic:"Alapvető jogok",q:"Melyik tartozik a második generációs jogok közé a tananyag szerint?",opts:["Oktatáshoz való jog","Vallásszabadság","Személyi szabadság","Gyermekek jogai"],correct:0,why:"A munkához, sztrájkhoz, oktatáshoz és szociális biztonsághoz való jog második generációs."},
+{topic:"Magyarország és Európa",q:"Hány vármegyéje van Magyarországnak a tananyag szerint?",opts:["7","19","20","23"],correct:1,why:"A tananyag tizenkilenc vármegyét sorol fel."},
+{topic:"Magyarország és Európa",q:"Melyik évben csatlakozott Magyarország az EU-hoz?",opts:["1999","2004","2007","2012"],correct:1,why:"Magyarország 2004. május 1-jén csatlakozott az Európai Unióhoz."},
+{topic:"Magyarország és Európa",q:"Melyik városban van az Európai Unió központja a tananyag szerint?",opts:["Strasbourg","Brüsszel","Bécs","Budapest"],correct:1,why:"A tananyag Brüsszelt nevezi meg központként."},
+{topic:"Magyarország és Európa",q:"Melyik a tananyagban felsorolt magyarországi tájegység?",opts:["Kisalföld","Bajor-erdő","Bretagne","Pó-síkság"],correct:0,why:"A Kisalföld a felsorolt magyar tájegységek egyike."}
+],
+yn: [
+{topic:"Nemzeti jelképek és ünnepek",q:"A Himnusz szövegét Kölcsey Ferenc írta.",correct:true,why:"Igaz: Kölcsey Ferenc költeménye 1823-ból."},
+{topic:"Nemzeti jelképek és ünnepek",q:"A Szózatot Erkel Ferenc írta.",correct:false,why:"Hamis: a Szózatot Vörösmarty Mihály írta, Egressy Béni zenésítette meg."},
+{topic:"Nemzeti jelképek és ünnepek",q:"A magyar zászló zöld színe a reményt jelképezi.",correct:true,why:"Igaz a tananyag szerint."},
+{topic:"Történelem",q:"Az Aranybullát 1222-ben adta ki II. András.",correct:true,why:"Igaz."},
+{topic:"Történelem",q:"A trianoni békeszerződést 1920. június 4-én írták alá.",correct:true,why:"Igaz."},
+{topic:"Történelem",q:"Az 1956-os forradalom november 4-én kezdődött.",correct:false,why:"Hamis: október 23-án kezdődött; november 4-én a szovjet csapatok megkezdték az ellenállás felszámolását."},
+{topic:"Irodalom és zenetörténet",q:"Kodály Zoltán a magyar népzenekutatás kiemelkedő alakja.",correct:true,why:"Igaz."},
+{topic:"Irodalom és zenetörténet",q:"A varázsfuvolát Ludwig van Beethoven szerezte.",correct:false,why:"Hamis: A varázsfuvola Wolfgang Amadeus Mozart műve."},
+{topic:"Állami intézmények",q:"Az Alaptörvény 2012. január 1-jén lépett hatályba.",correct:true,why:"Igaz."},
+{topic:"Állami intézmények",q:"A miniszterelnököt közvetlenül az állampolgárok választják meg.",correct:false,why:"Hamis: a miniszterelnököt az Országgyűlés választja meg."},
+{topic:"Alapvető jogok",q:"A véleménynyilvánítás szabadsága a tananyagban felsorolt alapvető jogok közé tartozik.",correct:true,why:"Igaz."},
+{topic:"Alapvető jogok",q:"A tananyag szerint Magyarországon 2012-ben törölték el a halálbüntetést.",correct:false,why:"Hamis: a tananyag 1990-et jelöli meg."},
+{topic:"Magyarország és Európa",q:"Magyarország hivatalos pénzneme a forint.",correct:true,why:"Igaz."},
+{topic:"Magyarország és Európa",q:"Budapest 1873-ban jött létre Pest, Buda és Óbuda egyesítésével.",correct:true,why:"Igaz."},
+{topic:"Magyarország és Európa",q:"Magyarország fővárosa Debrecen.",correct:false,why:"Hamis: Magyarország fővárosa Budapest."},
+{topic:"Állami intézmények",q:"2026-os frissített adat szerint Baka András Magyarország köztársasági elnöke.",correct:true,why:"Igaz: a 2026. augusztusi elnökválasztás után Baka András tölti be a tisztséget."},
+{topic:"Történelem",q:"A honfoglalás a tananyag szerint 895–896-ban történt.",correct:true,why:"Igaz."},
+{topic:"Történelem",q:"A mohácsi csata 1526-ban zajlott.",correct:true,why:"Igaz."},
+{topic:"Történelem",q:"A reformkor a tananyag szerint 1825 és 1848 közé esik.",correct:true,why:"Igaz."},
+{topic:"Történelem",q:"Az első világháború 1939-ben tört ki.",correct:false,why:"Hamis: az első világháború 1914–1918 között zajlott; 1939-ben a második kezdődött."},
+{topic:"Történelem",q:"A tananyag szerint Magyarország 1941-ben lépett hadba a tengelyhatalmak oldalán.",correct:true,why:"Igaz."},
+{topic:"Irodalom és zenetörténet",q:"Egressy Béni zenésítette meg a Szózatot.",correct:true,why:"Igaz."},
+{topic:"Állami intézmények",q:"A köztársasági elnök Magyarország államfője.",correct:true,why:"Igaz."},
+{topic:"Alapvető jogok",q:"A tananyag szerint az élethez való jog az első generációs jogok közé tartozik.",correct:true,why:"Igaz."},
+{topic:"Alapvető jogok",q:"A tananyag szerint a környezethez való jog a harmadik generációs jogok közé tartozik.",correct:true,why:"Igaz."},
+{topic:"Magyarország és Európa",q:"Magyarország hivatalos nyelve a tananyag szerint a magyar.",correct:true,why:"Igaz."},
+{topic:"Magyarország és Európa",q:"Budapest 1994 óta 23 kerülettel rendelkezik.",correct:true,why:"Igaz."},
+{topic:"Magyarország és Európa",q:"Magyarország 2007-ben csatlakozott a schengeni övezethez.",correct:true,why:"Igaz."},
+{topic:"Magyarország és Európa",q:"Az európai parlamenti választásokat a tananyag szerint kétévente tartják.",correct:false,why:"Hamis: ötévente tartják."}
+]
+};
+const $=id=>document.getElementById(id);
+let current=[],submitted=false;
+function shuffle(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function norm(s){return (s||"").toLocaleLowerCase("hu").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[.,;:!?()'"]/g," ").replace(/\s+/g," ").trim()}
+function chooseDistinct(pool,n,used){const result=[];for(const q of shuffle(pool)){if(!used.has(q.q)){result.push(q);used.add(q.q);if(result.length===n)break}}return result}
+function newQuiz(){
+ const used=new Set();
+ current=[
+  ...chooseDistinct(bank.open,4,used).map(q=>({...q,type:"open"})),
+  ...chooseDistinct(bank.mc,6,used).map(q=>({...q,type:"mc"})),
+  ...chooseDistinct(bank.yn,2,used).map(q=>({...q,type:"yn"}))
+ ];
+ current=shuffle(current);submitted=false;
+ $("intro").classList.add("hidden");$("resultPanel").classList.add("hidden");$("quizPanel").classList.remove("hidden");$("review").classList.add("hidden");
+ $("setInfo").textContent="Véletlenszerűen összeállított kérdéssor · "+new Date().toLocaleDateString("hu-HU");
+ $("questions").innerHTML=current.map((q,i)=>renderQuestion(q,i)).join("");
+ $("progress").style.width="0%";updateProgress();window.scrollTo({top:0,behavior:"smooth"});
+}
+function renderQuestion(q,i){
+ const typeLabel=q.type==="open"?"Kifejtős":q.type==="mc"?"Feleletválasztós":"Igen–nem";
+ let body="";
+ if(q.type==="open")body=`<textarea id="ans${i}" name="q${i}" aria-label="Válasz a(z) ${i+1}. kérdésre" placeholder="Írd ide a válaszod…" rows="3"></textarea>`;
+ if(q.type==="mc")body=q.opts.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"><span>${String.fromCharCode(65+j)}. ${o}</span></label>`).join("");
+ if(q.type==="yn")body=`<label class="option"><input type="radio" name="q${i}" value="true"><span>Igen</span></label><label class="option"><input type="radio" name="q${i}" value="false"><span>Nem</span></label>`;
+ return `<article class="question" id="question${i}"><div class="qhead"><span class="tag">${typeLabel}</span><span class="small muted">${q.topic}</span></div><div class="qtitle"><span class="qnum">${i+1}.</span>${q.q}</div>${body}</article>`;
+}
+function updateProgress(){
+ let count=0;current.forEach((q,i)=>{if(q.type==="open"){if($("ans"+i)?.value.trim())count++}else if(document.querySelector(`input[name="q${i}"]:checked`))count++});
+ $("answeredTag").textContent=`${count} / 12 megválaszolva`;$("progress").style.width=(count/12*100)+"%";
+}
+function gradeOpen(q,answer){
+ const n=norm(answer);if(!n)return false;
+ return q.keys.every(group=>group.some(k=>n.includes(norm(k))));
+}
+function answerText(q,answer){
+ if(q.type==="open")return answer.trim()||"Nem adott választ";
+ if(q.type==="mc")return answer===""?"Nem adott választ":q.opts[Number(answer)];
+ if(q.type==="yn")return answer===""?"Nem adott választ":answer==="true"?"Igen":"Nem";
+ return "";
+}
+function correctText(q){if(q.type==="open")return q.a;if(q.type==="mc")return q.opts[q.correct];return q.correct?"Igen":"Nem"}
+function submitQuiz(e){
+ e.preventDefault();if(submitted)return;submitted=true;
+ let score=0;
+ const results=current.map((q,i)=>{
+  let answer="";
+  if(q.type==="open")answer=$("ans"+i).value;
+  else answer=document.querySelector(`input[name="q${i}"]:checked`)?.value??"";
+  const correct=q.type==="open"?gradeOpen(q,answer):q.type==="mc"?(answer!==""&&Number(answer)===q.correct):answer===(q.correct?"true":"false");
+  if(correct)score++;
+  return {q,i,answer,correct};
+ });
+ $("quizPanel").classList.add("hidden");$("resultPanel").classList.remove("hidden");
+ const pass=score>=7;const box=$("scoreBox");box.className="result "+(pass?"pass":"fail");
+ box.innerHTML=`<strong class="score">${score} / 12 pont</strong><strong>${pass?"Sikeres vizsga! 🎉":"Ez most még nem sikerült."}</strong><p>${pass?"Elérted a szükséges 7 pontot. Szép munka!":"A sikerhez legalább 7 pont kell. Nézd át a megoldásokat, majd próbálj új tesztet."}</p><p class="small">Eredmény: ${Math.round(score/12*100)}% · Küszöb: 58,33%</p>`;
+ $("reviewList").innerHTML=results.map(r=>`<div class="review-item ${r.correct?"good":"bad"}"><strong>${r.i+1}. ${r.q.q}</strong><p><span class="muted">A válaszod:</span> ${escapeHtml(answerText(r.q,r.answer))} ${r.correct?"✓":"✗"}</p><p class="answer"><strong>Megoldás:</strong> ${escapeHtml(correctText(r.q))}</p>${r.q.why?`<p class="small muted">${escapeHtml(r.q.why)}</p>`:""}</div>`).join("");
+ $("review").classList.remove("hidden");$("reviewBtn").textContent="Megoldások elrejtése";window.scrollTo({top:0,behavior:"smooth"});
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+$("startBtn").addEventListener("click",newQuiz);$("newBtn").addEventListener("click",newQuiz);$("resetBtn").addEventListener("click",newQuiz);
+$("quizForm").addEventListener("submit",submitQuiz);
+$("questions").addEventListener("input",updateProgress);$("questions").addEventListener("change",updateProgress);
+$("reviewBtn").addEventListener("click",()=>{$("review").classList.toggle("hidden");$("reviewBtn").textContent=$("review").classList.contains("hidden")?"Megoldások megtekintése":"Megoldások elrejtése"});
+
+</script>
+</body>
+</html>
